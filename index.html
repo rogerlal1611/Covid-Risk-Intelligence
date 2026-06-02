@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>COVID Risk Intelligence</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="header">
+      <div>
+        <h1>COVID Risk Intelligence</h1>
+        <p id="status">Loading data...</p>
+      </div>
+
+      <div class="badge">Live Data API</div>
+    </div>
+
+    <div class="container">
+      <div class="sidebar">
+        <h3>📊 Dashboard</h3>
+
+        <!-- KPI CARD (NEW) -->
+        <div class="card kpi">
+          <h4>Live Active Cases</h4>
+          <p id="kpiActive">Loading...</p>
+        </div>
+
+        <div class="card">
+          <h4>System Status</h4>
+          <p id="systemStatus">Active</p>
+        </div>
+
+        <div class="card">
+          <h4>Filter Risk Levels</h4>
+
+          <button onclick="filterRisk('all')">🌍 Show All</button>
+          <button onclick="filterRisk('high')">🔴 High Risk</button>
+          <button onclick="filterRisk('medium')">🟠 Medium Risk</button>
+          <button onclick="filterRisk('low')">🟡 Low Risk</button>
+          <button onclick="filterRisk('safe')">🟢 Safe</button>
+        </div>
+
+        <div class="card">
+          <h4>Search City</h4>
+          <input id="searchBox" type="text" placeholder="Enter state name..." />
+          <button onclick="searchCity()">🔎 Search</button>
+          <div id="suggestions"></div>
+          <div id="searchResult"></div>
+
+          <div id="searchResult" style="margin-top: 10px"></div>
+        </div>
+
+        <div class="card">
+          <h4>Controls</h4>
+          <button onclick="trackUser()">📍 Find My Location</button>
+        </div>
+
+        <div class="card">
+          <h4>Risk Legend</h4>
+          <p>🔴 High risk</p>
+          <p>🟠 Medium risk</p>
+          <p>🟡 Low risk</p>
+          <p>🟢 Safe</p>
+        </div>
+
+
+      </div>
+
+      <div id="map"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

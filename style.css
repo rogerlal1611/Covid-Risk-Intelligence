@@ -1,0 +1,193 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: auto; /* 🚫 disables page scroll */
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(31, 111, 235, 0.4) rgba(255, 255, 255, 0.05);
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #0b1220;
+  color: white;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #111a2e;
+  border-bottom: 1px solid #1f2a44;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.badge {
+  background: #1f6feb;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+/* LAYOUT */
+.container {
+  display: flex;
+  height: calc(100vh - 70px);
+  overflow: hidden;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 280px;
+  background: #0f172a;
+  padding: 12px;
+  border-right: 1px solid #1f2a44;
+  height: 100%;
+  overflow-y: auto; /* ✅ only this scrolls */
+}
+
+.card {
+  background: rgba(17, 26, 46, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card h4 {
+  margin: 0 0 6px 0;
+  font-size: 14px;
+}
+
+.card p {
+  margin: 3px 0;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;   /* 👈 adds spacing */
+  border: none;
+  border-radius: 8px;
+  background: #1f6feb;
+  color: white;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+button:hover {
+  background: #2b7cff;
+  transform: scale(1.07);
+}
+
+/* MAP */
+#map {
+  flex: 1;
+  height: 100%;
+}
+
+/* ===== Scrollbar Styling (Chrome / Edge / Safari) ===== */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(31, 111, 235, 0.35); /* soft blue */
+  border-radius: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(31, 111, 235, 0.6);
+}
+
+input {
+  width: 100%;
+  padding: 10px 12px;
+  margin: 6px 0;
+  border-radius: 10px;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(17, 26, 46, 0.6);
+  color: white;
+
+  outline: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  transition: all 0.2s ease;
+}
+
+input:focus {
+  border-color: rgba(31, 111, 235, 0.8);
+  box-shadow: 0 0 10px rgba(31, 111, 235, 0.3);
+}
+
+#searchResult {
+  margin-top: 10px;
+  padding: 10px;
+
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  font-size: 13px;
+  line-height: 1.4;
+  display: none;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+#suggestions {
+  position: relative;
+  width: 100%;
+  margin-top: 5px;
+  background: rgba(17, 26, 46, 0.95);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(10px);
+}
+
+.suggestion-item {
+  padding: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.suggestion-item:hover {
+  background: rgba(31, 111, 235, 0.3);
+}
