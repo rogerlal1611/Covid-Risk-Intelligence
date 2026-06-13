@@ -40,14 +40,8 @@ A real-time interactive dashboard that visualizes COVID-19 risk levels across In
 
 ---
 
-## 📸 Preview
-
-(Add screenshot here later)
-
----
-
 ## ⚡ Run Locally
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/covid-risk-intelligence.git
+git clone https://github.com/rogerlal1611/covid-risk-intelligence.git
 open index.html
